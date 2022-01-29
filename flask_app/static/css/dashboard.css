@@ -1,0 +1,316 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    font-family: 'Acumin Pro', sans-serif;
+    font-weight: 400;
+}
+
+body{
+    background: url("https://www.toptal.com/designers/subtlepatterns/patterns/triangle-mosaic.png");
+}
+
+#container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+}
+
+#leftBox {
+    width: 328px;
+    height: 1400px;
+    background-color: black;
+    color: white;
+    padding: 0 30px;
+    box-sizing: border-box;
+}
+
+#leftBoxTop {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+#leftBoxTop a {
+    color: #FFC200;
+    font-family: 'Sarina', cursive;
+    font-size: 35pt;
+    text-decoration: none;
+}
+
+.text {
+    margin-top: 15px;
+    font-size: 14pt;
+}
+
+#leftBoxProfile {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin: auto;
+    height: 100px;
+    text-align: center;
+}
+
+#leftBoxProfile img{
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
+    background-color: gray;
+}
+
+#leftBoxProfile p {
+    margin: 0px;
+}
+
+#rightBox {
+    width: 100%;
+}
+
+#rightBoxNav {
+    width:100%;
+    display: flex;
+    justify-content: space-between;
+    height: 75px;
+    align-items: center;
+    padding: 0px 40px;
+    box-shadow: 1px 2px 10px grey;
+    background-color: white;
+    box-sizing: border-box;
+}
+
+#navLeft {
+    display: flex;
+    align-items: center;
+    width: 270px;
+}
+#navLeft h1 {
+    margin-left: 10px;
+    margin-top: 10px;
+}
+
+#navLeft img {
+    width: 40px;
+    height: 40px;
+}
+
+.nav-icon { 
+    width: 60px;
+    height: 60px;
+}
+.nav-icon-sm {
+    width: 55px;
+    height: 55px;
+}
+.nav-icon-xsm {
+    width: 50px;
+    height: 50px;
+}
+
+.active {
+    background-color: #FFC200;
+    border: 2px solid #000;
+    border-radius: 5px;
+    padding: 5px;
+}
+
+#navMiddle{
+    display: flex;
+    width: 240px;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#navRight {
+    display: flex;
+    width: 400px;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: 700;
+    font-size: 14pt;
+}
+
+#specialText {
+    width: 150px;
+    height: 50px;
+    background-color: #3E3D3D;
+    color: #FFC200;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 15px;
+}
+
+#invite {
+    display: flex;
+    margin-left: 20px;
+    margin-top: 30px;
+}
+
+#invite img {
+    margin-right: 20px;
+}
+
+#invite span {
+    color: #FFC200;
+    border-bottom: 1px solid #FFC200;
+}
+
+#socialText {
+    margin-top: 35px;
+    border-bottom: 2px solid #FFC200;
+    width: 145px;
+    font-family: 'Fredoka One', cursive;
+    font-weight: lighter;
+    font-size: 16pt;
+}
+
+.big-btn {
+    width: 140px;
+    height: 50px;
+    border: 3px solid black;
+    color: #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 15px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.big-btn:hover {
+    background-color: black;
+    color: #FFC200;
+}
+
+h2 {
+    width: 75px;
+    border-bottom: 2px solid #FFC200;
+    font-family: 'Fredoka One', cursive;
+    font-weight: lighter;
+    font-size: 16pt;
+}
+
+.aTag {
+    color: white;
+    text-decoration: none;
+    font-family: 'Fredoka One', cursive;
+    font-weight: lighter;
+    font-size: 16pt;
+}
+
+
+#innerRightBox {
+    display: flex;
+    border-bottom: 3px solid black;
+    border-left: 3px solid black;
+    border-right: 3px solid black;
+    margin: 30px 50px 0px;
+    height: 600px;
+    border-radius: 4px;
+}
+
+#friendsRecent {
+    flex: 3;
+}
+
+#friends {
+    flex: 1;
+    border-left: 4px solid black;
+}
+
+li {
+    margin-top: 20px;
+    font-size: 16pt;
+    list-style-type: none;
+    margin-left: 20px;
+}
+
+#logout {
+    color: black;
+    text-decoration: none;
+}
+
+.header {
+    padding-left: 15px;
+    color: #FFC200;
+    background-color: black;
+    height: 60px;
+    line-height: 80px;
+    line-height: 70px;
+    text-align: start;
+    font-family: 'Fredoka One', cursive;
+    letter-spacing: 1px;
+}
+
+#recentwishes {
+    border-bottom: 3px solid black;
+    border-left: 3px solid black;
+    border-right: 3px solid black;
+    height: 400px;
+    display: flex;
+    justify-content: space-around;
+}
+
+#recentwishes span {
+    width: 200px;
+    height: 350px;
+    margin-top: 25px;
+    border: 2px solid lightgray;
+    text-align: center;
+}
+
+#recentWishImg {
+    width: 180px;
+    height: 225px;
+    border-bottom: 2px solid lightgray;
+    margin: 5px 0px;
+}
+
+#recentFriendImg {
+    width: 62px;
+    height: 62px;
+}
+
+#friendsRecent table{
+    margin-top: 15px;
+    text-align: center;
+}
+
+#lowerRightBox{
+    margin: 10px 50px;
+    border-radius: 4px;
+}
+
+#t-head {
+    text-decoration: underline;
+    font-size: 16pt;
+}
+
+.view-btn {
+    padding: 5px 8px 3px;
+    background-color: #FFC200;
+    border: 2px solid black;
+    border-radius: 3px;
+    color: black;
+    text-decoration: none;
+    }
+
+#addfriends-btn {
+    padding: 5px 8px 3px;
+    background-color: black;
+    border: 2px solid black;
+    border-radius: 3px;
+    color: #FFC200;
+    text-decoration: none;
+    margin-left:7px;
+}
+
+#addfriends-btn:hover {
+    background-color: #FFC200;
+    color: #000;
+    border-radius: 5px;
+    border: 2px solid black;
+}
+
+

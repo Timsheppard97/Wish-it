@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{session['first_name']}}'s Friends</title>
+    <link rel="stylesheet" href="../static/css/friends.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sarina&display=swap" rel="stylesheet">
+</head>
+</head>
+<body>
+    <div id="nav">
+            <a id="navh1" href="/dashboard">Wish it</a>
+            <h2>Friends List</h2>
+            <div id="navRight">
+                <h3><a id="aTag" href="/dashboard">Dashboard</a></h3>
+                <h3><a id="aTag" href="/logout">Sign Out</a></h3>
+            </div>
+        </div>
+    <div id="container">
+        <div id="friendsList">
+            <h1>Friends</h1>
+            <ul>
+                {% for friend in in_session_user.friends %}
+                <li>
+                    {{friend.first_name}} {{friend.last_name}}
+                    <a id="friendsDelete" href="/delete_friend/{{friend.id}}" onclick="return confirm('Are you sure you want to delete this friend?');">Delete</a>
+                </li>
+                {% endfor %}
+                
+            </ul>
+        </div>
+        <div id="addFriend">
+            <h1>Add a Friend</h1>
+            <form action="/add_friend/{{session['user_id']}}" method="POST">
+                <select name="add_friend" id="select">
+                    {% for user in users %}
+                    <option value="{{user.id}}">{{user.first_name + " " + user.last_name}}</option>
+                    
+                    {% endfor %}
+                </select> <br>
+                <input type="submit" value="Add Friend" id="submitButton">
+            </form>
+        </div>
+    </div>
+</body>
+</html>

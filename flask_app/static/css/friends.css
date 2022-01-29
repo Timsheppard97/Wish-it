@@ -1,0 +1,129 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    font-family: 'Acumin Pro', sans-serif;
+}
+
+body{
+    background: url("https://www.toptal.com/designers/subtlepatterns/patterns/triangle-mosaic.png");
+
+}
+
+#nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: black;
+    color: #FFC200;
+    height: 100px;
+    padding: 0px 100px;
+}
+
+#navh1 {
+    font-family : 'Sarina', cursive;
+    font-size: 35pt;
+    text-decoration: none;
+    color: #FFC200;
+}
+
+#nav h2 {
+    font-size: 28pt;
+}
+
+#navRight {
+    width: 250px;
+    display: flex;
+    justify-content: space-around;
+}
+
+#aTag {
+    text-decoration: none;
+    color: #FFC200;
+}
+
+#container {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+    margin-top: 30px;
+}
+
+#friendsList {
+    width: 20%;
+    border: 2px solid black;
+    padding: 25px 5px;
+}
+
+#addFriend {
+    width: 20%;
+    border: 2px solid black;
+    padding: 25px 0px;
+}
+
+.menu_button {
+    background-color: #FFC200;
+    border: none;
+    font-size: 14pt;
+    height: 30px;
+    width: 110px;
+    border-radius: 12%;
+}
+
+ul li {
+    list-style: none;
+    font-size: 18pt;
+    margin: auto;
+    margin-bottom: 10px;
+    padding: 5px;
+    height: 30px;
+    width: 90%;
+    background-color: white;
+    border: 2px solid black;
+    border-radius: 15px;
+    font-weight: 700;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#addFriend h1, #friendsList h1 {
+    margin-bottom: 25px;
+    font-size: 50px;
+}
+
+#submitButton {
+    width: 140px;
+    height: 40px;
+    font-size: 16pt;
+    margin: 35px 0px;
+    border-radius: 15px;
+    font-weight: 700;
+    border: 2px solid black;
+} 
+
+#addFriend select {
+    width: 300px;
+    height: 45px;
+    text-align: center;
+    font-size: 14pt;
+    border: 2px solid black;
+    border-radius: 20px;
+}
+
+#friendsDelete {
+    font-size: 12pt;
+    margin-left: 20px;
+    color: white;
+    background-color: red;
+    border-radius: 15px;
+    width: 60px;
+    height: 25px;
+    text-decoration: none;
+    text-align: middle;
+    line-height: 25px;
+}
+
+#submitButton:hover {
+    background: rgb(11, 199, 11);
+}

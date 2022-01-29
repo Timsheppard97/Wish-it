@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="128.929" height="139.148" viewBox="0 0 128.929 139.148">
+  <g id="Group_10" data-name="Group 10" transform="translate(-133.271 -1195.352)">
+    <path id="ic_lightbulb_outline_24px" d="M26.3,103.175a5.341,5.341,0,0,0,5.325,5.325h21.3a5.341,5.341,0,0,0,5.325-5.325V97.85H26.3ZM42.275,2a37.259,37.259,0,0,0-21.3,67.84V81.875A5.341,5.341,0,0,0,26.3,87.2H58.25a5.341,5.341,0,0,0,5.325-5.325V69.84A37.259,37.259,0,0,0,42.275,2ZM57.451,61.108l-4.526,3.2V76.55h-21.3V64.3l-4.526-3.2a26.625,26.625,0,1,1,30.353,0Z" transform="translate(155.896 1226)"/>
+    <path id="ic_arrow_drop_down_24px" d="M7,10,18.364,30.539,29.728,10Z" transform="translate(186.249 1224.969) rotate(135)"/>
+    <path id="ic_arrow_drop_down_24px-2" data-name="ic_arrow_drop_down_24px" d="M7,10,18.364,30.539,29.728,10Z" transform="translate(216.295 1225.891) rotate(180)"/>
+    <path id="ic_arrow_drop_down_24px-3" data-name="ic_arrow_drop_down_24px" d="M7,10,18.364,30.539,29.728,10Z" transform="translate(239.584 1250.939) rotate(-135)"/>
+    <path id="ic_arrow_drop_down_24px-4" data-name="ic_arrow_drop_down_24px" d="M7,10,18.364,30.539,29.728,10Z" transform="translate(163.547 1240.561) rotate(88)"/>
+    <path id="ic_arrow_drop_down_24px-5" data-name="ic_arrow_drop_down_24px" d="M7,10,18.364,30.539,29.728,10Z" transform="translate(231.662 1277.985) rotate(-90)"/>
+  </g>
+</svg>

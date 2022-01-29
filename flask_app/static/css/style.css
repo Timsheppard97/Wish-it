@@ -1,0 +1,185 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Acumin Pro', sans-serif;
+    font-weight: 400;
+    font-size: 10px;
+}
+
+h1 {
+    font-weight: bold;
+    font-size: 4em;
+}
+
+h2 {
+    font-size: 3em;
+    padding-bottom: .5em;
+}
+
+h3 {
+    font-size: 2.5em;
+    padding-bottom: .5em;
+}
+
+h4 {
+    font-size: 2em;
+    padding-bottom: .5em;
+}
+
+p {
+    font-size: 1.5em;
+}
+
+.flex { 
+    display: flex;
+    align-items: center;
+}
+
+.inline-block {
+    display: inline-block;
+}
+
+.fw-block-grey {
+    display: flex;
+    background: #FAF7F7 0% 0% no-repeat padding-box;
+    margin-bottom: 4em;
+}
+
+.hw-left-block {
+    width: 50%;
+    padding: 6em;
+    padding-right: 3em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.hw-right-block {
+    width: 50%;
+    padding: 4em;
+    padding-left: 3em;
+    display: flex;
+    justify-content: center;
+}
+
+.centering-box {
+    margin: 2em;
+    text-align: center;
+}
+.lefting-box {
+    margin: 2em;
+    text-align: start;
+    margin: 0 4em;
+}
+
+.btn-dark {
+    background-color: #3a3a3a;
+    color: #FFC200;
+    font-size: 1.5em;
+    border-radius: .5em;
+    padding: .5em 1em;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 190px;
+    text-decoration: none;
+}
+
+.content-block-white {
+    background: #FFFFFF 0% 0% no-repeat;
+    box-shadow: 0px 3px 6px #00000029;
+    border-radius: 30px;
+    padding: 2em;
+    display: flex;
+    justify-content: center;
+}
+
+.fun-txt {
+    font-family: "Gloria Hallelujah";
+    font-size: 3em;
+}
+
+.fw-block-white {
+    height: auto;
+    display: flex;
+    padding: 0 1em;
+    justify-content: space-evenly;
+}
+
+.logo-font {
+    font-family: "Sarina", cursive;
+    font-size: 3em;
+    text-align: center;
+    margin-bottom: 1em
+}
+.mx-4{
+    margin: 0 4em;
+}
+
+.home-icon {
+    margin-right: 2em;
+    width: 8em;
+}
+
+.scroll-box {
+    height: 80em;
+}
+
+.nav {
+    display: flex;
+    height: 80px;
+    align-items: center;
+    box-shadow: 5px 5px 10px grey;
+}
+
+.nav-left{
+    height: 100%;
+    width: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo{
+    font-family: 'Sarina', cursive;
+}
+
+.nav-right {
+    display: flex;
+    width: 100%;
+    justify-content:end;
+    justify-items: end;
+    padding-right: 50pt;
+}
+
+.nav-content{
+    display: flex;
+    text-align: center;
+    font-size: 12pt;
+    padding-bottom: .5em;
+    height: 20px;
+    width: 100px;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    padding-top: 4pt;
+    color: black;
+}
+
+.register{
+    display: flex;
+    font-size: 12pt;
+    height: 20px;
+    width: 100px;
+    padding: 8px 7px 3px 7px;
+    align-items: center;
+    justify-content: center;
+    background-color: #000000;
+    border-radius: 5px;
+    border: 1pt, solid, #ffc200;
+    color: #ffc200;
+    text-decoration: none;
+    padding-top: 4pt;
+    padding-bottom: 6px;
+    margin-left: 10px;
+}

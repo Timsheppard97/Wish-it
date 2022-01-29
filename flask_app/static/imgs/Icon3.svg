@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="26" height="26" viewBox="0 0 26 26">
+  <defs>
+    <clipPath id="clip-path">
+      <rect id="Mask" width="26" height="26" rx="4" transform="translate(-0.349 0.056)" fill="#ffc200"/>
+    </clipPath>
+  </defs>
+  <g id="Icon" transform="translate(0.349 -0.056)">
+    <rect id="Mask-2" data-name="Mask" width="26" height="26" rx="4" transform="translate(-0.349 0.056)" fill="#ffc200"/>
+    <g id="Icon-2" data-name="Icon" clip-path="url(#clip-path)">
+      <path id="Rectangle_2_Copy" data-name="Rectangle 2 Copy" d="M1.288,4.939,4.931,1.294a4.419,4.419,0,0,1,6.24-.008l.008.008,3.643,3.645a4.4,4.4,0,0,1,0,6.219L11.179,14.8a4.419,4.419,0,0,1-6.24.008L4.931,14.8,1.288,11.158A4.4,4.4,0,0,1,1.288,4.939Z" transform="translate(14.603 19.658)" fill="red"/>
+      <path id="Rectangle_2_Copy_2" data-name="Rectangle 2 Copy 2" d="M1.288,4.939,4.931,1.294a4.419,4.419,0,0,1,6.24-.008l.008.008,3.643,3.645a4.4,4.4,0,0,1,0,6.219L11.179,14.8a4.419,4.419,0,0,1-6.24.008L4.931,14.8,1.288,11.158A4.4,4.4,0,0,1,1.288,4.939Z" transform="translate(3.169 2.433)" fill="#753ad7"/>
+    </g>
+  </g>
+</svg>

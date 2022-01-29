@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{session['first_name']}}'s Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static',filename='/css/userwishlist.css') }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sarina&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div id="container">
+        <div id="leftBox">
+            <a id="h1Wishit" href="/dashboard" class="sarina">Wish it</a>
+            <h2>Menu</h2>
+            <a class="aTag" href="/dashboard">Dashboard</a>
+            <a class="aTag" href="/edit_wishlist">Edit List</a>
+            <a class="aTag" href="/create_wishlist">New List</a>
+            <a class="aTag" href="/#">Share List</a>
+                {% if delete == True %}
+            <a class="aTag" href="/delete_wishlist/{{session['user_id']}}/{{wishlist.id}}">Delete List</a>
+                {% endif %}
+            <a class="aTag" href="/friends/{{session['user_id']}}">Friends</a>
+        </div>
+        <div id="second_container">
+            <div id="rightBoxNav">
+                <div id="navLeft">
+                    <img src="/static/imgs/Icon1.svg" alt="">
+                    <h1>Users Wishlists</h1>
+                </div>
+                <div id="navMiddle">
+                    <a href="/dashboard"><img src="/static/imgs/house.svg" alt="home icon" class="nav-icon-xsm"></a>
+                    <a href="/userwishlist/{{session['user_id']}}"><img src="/static/imgs/ic_view_carousel_24px.svg" alt="dashboard icon" class="nav-icon-sm active"></a>
+                    <a href="/friends/{{session['user_id']}}"><img src="/static/imgs/ic_group_24px.svg" alt="friends icon" class="nav-icon"></a>
+                </div>
+                <div id="navRight">
+                    <p>About</p>
+                    <a href="/new_wish/{{session['user_id']}}" class="big-btn">Add Wish</a>
+                    <a class="big-btn" href="/logout">Sign Out</a>
+                </div>
+            </div>
+            <div id="rightBox">
+                <div id="list-selector">
+                    <div class="flex listName">
+                        <a href="/userwishlist/{{session['user_id']}}"><h2 class="inline">All Wishes</h2></a><button id="gold"></button>
+                    </div>
+                    {% for wishlist in all_wishlists %}
+                        <div class="flex listName {{wishlist.color}}">
+                            <a href="/userwishlist/{{session['user_id']}}/{{wishlist.id}}"><h2 class="inline">{{wishlist.name}}</h2></a><button id="{{wishlist.color}}">
+                        </div>
+                        {% endfor %}
+                </div>
+                
+                <div id="wishes">
+                    <table>
+                        <thead>
+                            <tr id="t-head">
+                                <th>Image</th>
+                                <th>Name</th>
+                                <th>Price</th>
+                                <th>URL</th>
+                                <!-- <th>List Tags</th> -->
+                                <th>Modified Date</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody >
+                            {% for wish in wishes%}
+                                <tr>
+                                    <td><img class="wish_img" src="/static/wish_imgs/{{wish.wish_image}}"alt=""></td>
+                                    <td><a href="/view/{{wish.id}}">{{wish.name}}</a></td>
+                                    <td>${{wish.price}}</td>
+                                    <td><a href="https://{{wish.url}}">{{wish.url}}</a></td>
+                                    <!-- <td>wish.tag</td> -->
+                                    <td>{{wish.updated_at}}</td>
+                                    <td>
+                                        <a href="/edit/{{wish.id}}" class="edit-btn">Edit</a>
+                                        <a href="/delete/{{wish.id}}" class="delete-btn" onclick="return confirm('Are you sure you want to delete this wish?');">Delete</a>
+                                    </td>
+                                </tr>
+                                {% endfor %}
+                                
+                                {% if not allwishes == true %} 
+                                {% for wish in wishlist.wish%}
+                                <tr >
+                                    <td><img class="wish_img" src="/static/wish_imgs/{{wish.wish_image}}"alt=""></td>
+                                    <td><a href="/view/{{wish.id}}">{{wish.name}}</a></td>
+                                    <td>{{wish.price}}</td>
+                                    <td><a href="https://{{wish.url}}">{{wish.url}}</a></td>
+                                    <!-- <td>wish.tag</td> -->
+                                    <td>{{wish.updated_at}}</td>
+                                    <td>
+                                        <a href="/edit/{{wish.id}}" class="edit-btn">Edit</a>
+                                        <a href="/delete/{{wish.id}}" class="delete-btn">Delete</a>
+                                    </td>
+                                </tr>
+                                {% endfor %}
+                                {% endif %}
+                                {% if wishlist == false %}
+                                <tr >
+                                    <td>No Wishes</td>
+                                    <td><a href="/new_wish/{{session['user_id']}}" class="big-btn">Wish it</a> </td>
+                                </tr>
+                                {% endif %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

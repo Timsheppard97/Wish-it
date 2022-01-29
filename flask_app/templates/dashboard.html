@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>{{session["first_name"]}}'s Dashboard</title>
+		<link
+			rel="stylesheet"
+			href="{{ url_for('static', filename='/css/dashboard.css') }}"
+		/>
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Sarina&display=swap"
+			rel="stylesheet"
+		/>
+		<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Dosis:wght@600&family=Fredoka+One&display=swap" rel="stylesheet"> 
+	</head>
+	<body>
+		<div id="container">
+			<div id="leftBox">
+				<div id="leftBoxTop">
+					<a href="/dashboard">Wish it</a>
+				</div>
+				<div id="leftBoxProfile">
+					<img src="static/imgs/square_logo.jpg" alt="" />
+					<p>{{user.user_name}}</p>
+				</div>
+				<h2>MENU</h2>
+				<p class="text">
+					<a class="aTag" href="/friends/{{session['user_id']}}">Friends</a>
+				</p>
+				<p class="text">
+					<a class="aTag" href="/userwishlist/{{session['user_id']}}"
+						>My Wish Lists</a
+					>
+				</p>
+				<p class="text">
+					<a class="aTag" href="/settings/{{session['user_id']}}">Settings</a>
+				</p>
+				<p class="text">
+					<a class="aTag" href="/chat/{{session['user_id']}}">Chat</a>
+				</p>
+				<p class="text">
+					<a class="aTag" href="/notifications/{{session['user_id']}}"
+						>Notifications</a
+					>
+				</p>
+				<div id="invite">
+					<img src="static/imgs/group.svg" alt="" />
+					<p>
+						<span>+ Invite viewers</span> <br />
+						to your wish list
+					</p>
+				</div>
+				<p id="socialText">Share to Social</p>
+				<p class="text"><a class="aTag" href="/facebook">FACEBOOK</a></p>
+				<p class="text"><a class="aTag" href="/twitter">Twitter</a></p>
+				<p class="text"><a class="aTag" href="/snapchat">Snapchat</a></p>
+				<p class="text"><a class="aTag" href="/instagram">Instagram</a></p>
+			</div>
+			<div id="rightBox">
+				<div id="rightBoxNav">
+					<div id="navLeft">
+						<img src="../static/imgs/Icon2.svg" alt="icon" />
+						<h1>Dashboard</h1>
+					</div>
+					<div id="navMiddle">
+						<a href="/dashboard"
+							><img
+								src="../static/imgs/house.svg"
+								alt="home icon"
+								class="nav-icon-xsm active"
+						/></a>
+						<a href="/userwishlist/{{session['user_id']}}"
+							><img
+								src="../static/imgs/ic_view_carousel_24px.svg"
+								alt="dashboard icon"
+								class="nav-icon-xsm"
+						/></a>
+						<a href="/friends/{{session['user_id']}}"
+							><img
+								src="../static/imgs/ic_group_24px.svg"
+								alt="friends icon"
+								class="nav-icon"
+						/></a>
+					</div>
+					<div id="navRight">
+						<p>About</p>
+						<a href="/new_wish/{{session['user_id']}}" class="big-btn"
+							>Add Wish</a
+						>
+						<a class="big-btn" href="/logout">Sign Out</a>
+					</div>
+				</div>
+				<div id="innerRightBox">
+					<div id="friendsRecent">
+						<h1 class="header">FRIENDS RECENT WISHES</h1>
+						<table style="width: 100%">
+							<thead id="t-head">
+								<tr>
+									<th>Image</th>
+									<th>Friend</th>
+									<th>Wish</th>
+									<th>Modified</th>
+									<!-- <th>List Tags</th> -->
+									<th>Actions</th>
+								</tr>
+							</thead>
+							<tbody>
+								{% for friend in recent.friends %}
+								<tr>
+									<td>
+										<img
+											id="recentFriendImg"
+											src="/static/wish_imgs/{{friend.wishes[0].wish_image}}"
+											alt=""
+										/>
+									</td>
+									<td>{{friend.first_name}} {{friend.last_name}}</td>
+									<td>{{friend.wishes[0].name}}</td>
+									<td>{{friend.wishes[0].updated_at}}</td>
+									<td><a href="/view/{{friend.wishes[0].id}}" class="view-btn">View</a></td>
+								</tr>
+								{% endfor %}
+							</tbody>
+						</table>
+					</div>
+					<div id="friends">
+						<h1 class="header">FRIENDS</h1>
+						{% if no_friends == true %}
+						<li>-- No friends -- </li>	
+						<li><a id="addfriends-btn" href="/friends/{{session['user_id']}}">Add Some! </a></li>
+						{% endif %}
+
+						{% for friend in friends.friends %}
+						<li>{{friend.first_name}} {{friend.last_name}}</li>
+						{% endfor %}
+					</div>
+				</div>
+				<div id="lowerRightBox">
+					<h1 class="header">YOUR RECENT WISHES</h1>
+					<div id="recentwishes">
+						{% for wish in user_recent.wishes %}
+						<span
+							><img
+								id="recentWishImg"
+								src="../static/wish_imgs/{{wish.wish_image}}"
+								alt=""
+							/><br />{{wish.name}}</span
+						>
+						{% endfor %}
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

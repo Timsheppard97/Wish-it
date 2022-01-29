@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/css/edit.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sarina&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Dosis:wght@600&family=Fredoka+One&display=swap" rel="stylesheet">
+    <title>Edit Wishlist</title>
+</head>
+<body>
+    <div class="nav">
+        <div class="nav-left">
+            <a href= "/dashboard" class="logo">Wish it</a>
+        </div>
+        <div class="nav-right">
+            <a id="nav_content" href="/#">Support</a>
+            <a id="nav_content" href="/#">About</a>
+            <a class="nav-btn" href="/dashboard">Dashboard</a>
+        </div>
+    </div>
+    <h2>Edit wishlist</h2>
+    <div id="container">
+        {% with errors = get_flashed_messages(category_filter=["edit_wishlist"]) %}
+            {% if errors %}
+                {% for message in errors %}
+                    <p style="color:red">{{message}}</p>
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+        <form action="/edit_wishlist/" method="POST">
+            <label>Image: </label>
+            <br>
+            <input type="file" name="wish_image" accept="image/*">
+            <br><br>
+            <label>Name:</label>
+            <br>
+            <input type="text" name="name">
+            <br><br>
+            <label>Cost:</label>
+            <br>
+            <input type="number" name="price">
+            <br><br>
+            <label>URL:</label>
+            <br>
+            <input type="text" name="url">
+            <br><br>
+            <label>Wish Note:</label>
+            <br>
+            <textarea cols="20" rows="5" name="description"></textarea>
+            <br><br>
+            <input id="submit" type="submit" value="Edit" id="register">
+        </form>
+    </div>
+</body>
+</html>

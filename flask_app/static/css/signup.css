@@ -1,0 +1,122 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Acumin Pro', sans-serif;
+    font-weight: 400;
+    font-size: 15px;
+}
+
+.nav {
+    display: flex;
+    height: 80px;
+    align-items: center;
+    box-shadow: 1px 2px 10px grey;
+    background-color: white;
+}
+
+.nav-left{
+    height: 100%;
+    width: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo{
+    font-family: 'Sarina', cursive;
+    font-size: 30pt;
+    font-weight: bold;
+    color: black;
+    text-decoration: none;
+}
+
+.logo1{
+    font-family: 'Sarina', cursive;
+    font-size: 50pt;
+    font-weight: bold;
+}
+.nav-right {
+    display: flex;
+    width: 100%;
+    justify-content:end;
+    justify-items: end;
+    padding-right: 50pt;
+}
+
+#nav_content{
+    display: flex;
+    text-align: center;
+    font-size: 12pt;
+    padding-bottom: .5em;
+    height: 20px;
+    width: 100px;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    padding-top: 4pt;
+    color: black;
+}
+
+.register{
+    display: flex;
+    font-size: 12pt;
+    height: 20px;
+    width: 100px;
+    padding: 8px 7px 3px 7px;
+    align-items: center;
+    justify-content: center;
+    background-color: #000000;
+    border-radius: 5px;
+    border: 1pt, solid, #ffc200;
+    color: #ffc200;
+    text-decoration: none;
+    padding-top: 4pt;
+    margin-left: 10px;
+}
+
+body{
+    background: url("https://www.toptal.com/designers/subtlepatterns/patterns/triangle-mosaic.png");
+}
+
+.body{
+    display: flex;
+    width: 100%;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    padding-top: 70pt;
+}
+
+h2{
+    font-size: 20pt;
+    font-family: 'Sarina', cursive;
+    padding-bottom: 5pt;
+}
+
+h5, .signup{
+    font-size: 15pt;
+    padding-bottom: 20pt;
+}
+
+.login{
+    width: 100pt;
+    height: 20pt;
+    margin-left: 30px;
+    padding: 8px 10px 20px 10px;
+    background-color: black;
+    color: white ;
+    font-weight: bold;
+    border-radius: 5px;
+    margin-bottom: 100px; 
+}
+
+input { 
+    border: 2px solid black;
+    border-radius: 5px;
+    line-height: 15px;
+    width: 200px;
+}
+
+.password {
+    margin-bottom: 4px;
+}

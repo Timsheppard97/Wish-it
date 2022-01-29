@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/css/create_wishlist.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sarina&display=swap" rel="stylesheet">
+    <title>Add Wishlist</title>
+</head>
+<body>
+    <div class="nav">
+        <div class="nav-left">
+            <a href= "/dashboard" class="logo">Wish it</a>
+        </div>
+        <div class="nav-right">
+            <a id="nav_content" href="/#">Support</a>
+            <a id="nav_content" href="/#">About</a>
+            <a class="register" href="/dashboard">Dashboard</a>
+        </div>
+    </div>
+    <h2><i>Add a Wishlist</i></h2>
+    {% with errors = get_flashed_messages(category_filter=["add_wishlist"]) %}
+        {% if errors %}
+            {% for message in errors %}
+                <p style="color:red">{{message}}</p>
+            {% endfor %}
+        {% endif %}
+    {% endwith %}
+    <div id="container">
+        <form action="/create/wishlist" method="POST">
+            <label>Name:</label>
+            <br>
+            <input type="text" name="name">
+            <br><br>
+            <label>Type:</label>
+            <br>
+            <input type="text" name="type">
+            <br><br>
+            <label>Tag:</label>
+            <br>
+            <input type="text" name="tag">
+            <br><br>
+            <label>Wishlist description:</label>
+            <br>
+            <textarea cols="20" rows="5" name="description"></textarea>
+            <br><br>
+            <label>Color: </label>
+            <select name="color">
+                <option hidden selected disabled>Select Color</option>
+                <option value="purple">Purple</option>
+                <option value="orange">Orange</option>
+                <option value="teal">Teal</option>
+                <option value="red">Red</option>
+                <option value="pink">Pink</option>
+            </select>
+            <br><br><br>
+            <input id="submit" type="submit" value="Create Wishlist">
+        </form>
+    </div>
+</body>
+</html>

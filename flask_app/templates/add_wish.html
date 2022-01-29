@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Wish</title>
+    <link rel="stylesheet" type="text/css" href="/static/css/add_wish.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sarina&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="nav">
+        <div class="nav-left">
+            <h1 class="logo">Wish it</h1>
+        </div>
+        <div class="nav-right">
+            <a id="nav_content" href="/#">Support</a>
+            <a id="nav_content" href="/#">About</a>
+            <a class="menu_button" href="/dashboard">Dashboard</a>
+        </div>
+    </div>
+    <h2><i>Add a wish</i></h2>
+            {% with errors = get_flashed_messages(category_filter=["add"]) %}
+                {% if errors %}
+                    {% for message in errors %}
+                        <p id="add" style="color:red">{{message}}</p>
+                    {% endfor %}
+                {% endif %}
+            {% endwith %}
+        <div id="container">
+            <form action="/createwish" enctype="multipart/form-data" method="POST">
+                <label>Image: </label>
+                <br>
+                <input type="file" name="wish_image">
+                <br><br>
+                <label>Name:</label>
+                <br>
+                <input type="text" name="name">
+                <br><br>
+                <label>Cost:</label>
+                <br>
+                <input type="number" name="price" step=".01">
+                <br><br>
+                <label>URL:</label>
+                <br>
+                <input type="text" name="url">
+                <br><br>
+                <label>Wish Note:</label>
+                <br>
+                <textarea cols="25" rows="5" name="description"></textarea>
+                <br><br>
+                <select name="wishlist_id" id="wishlist">
+                    <option value="" selected hidden disabled>Select wishlist</option>
+                    {% for wishlist in wishlists %}
+                    <option value="{{wishlist.id}}">{{wishlist.name}}</option>
+                    {% endfor %}
+                </select>
+                <br><br><br>
+                <input id="submit" type="submit" value="Make a Wish">
+            </form>
+        </div>
+    </div>
+</body>
+</html>

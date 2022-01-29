@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/signup.css') }}" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Sarina&display=swap" rel="stylesheet">
+    <title>Login or Register</title>
+</head>
+<style>
+    h6,
+    h5 {
+        margin: auto;
+    }
+</style>
+
+<body>
+    <div class="nav">
+        <div class="nav-left">
+            <h1><a href="/dashboard" class="logo">Wish it</h1>
+        </div>
+        <div class="nav-right">
+            <a id="nav_content" href="/#">Support</a>
+            <a id="nav_content" href="/#">About</a>
+            <a id="nav_content" href="/login">Sign in</a>
+            <a class="register" href="/register">Get Started</a>
+        </div>
+    </div>
+    <div id="content">
+        <div class="body">
+            <h2 class="logo1">Wish it</h2>
+            <h5>Already a member? <a href="/login">Login</a></h5>
+            <br>
+            <h5><a href="https://accounts.google.com">Sign in with Google</a></h5>
+            <br><br>
+            {% with errors = get_flashed_messages(category_filter=["register"]) %}
+            {% if errors %}
+            {% for message in errors %}
+            <p style="color:red">{{message}}</p>
+            {% endfor %}
+            {% endif %}
+            {% endwith %}
+            <form action="/create_user" method="POST">
+                <label><b>First Name</b></label>
+                <br>
+                <input type="text" name="first_name">
+                <br><br>
+                <label><b>Last Name</b></label>
+                <br>
+                <input type="text" name="last_name">
+                <br><br>
+                <label><b>Create Username</b></label>
+                <br>
+                <input type="text" name="user_name">
+                <br><br>
+                <label><b>Email</b></label>
+                <br>
+                <input type="email" name="email">
+                <br><br>
+                <label><b>Password</b></label>
+                <br>
+                <input class="password" type="password" name="password">
+                <h6>*Enter at least 8 characters<br>*uppercase letter<br>*lowercase letter<br>*number</h6>
+                <br>
+                <label><b>Confirm Password</b></label>
+                <br>
+                <input type="password" name="confirm_password">
+                <br><br>
+                <input class="login" type="submit" value="Create Account">
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>

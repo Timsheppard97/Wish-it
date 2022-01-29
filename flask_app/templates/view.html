@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/css/view.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sarina&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Dosis:wght@600&family=Fredoka+One&display=swap" rel="stylesheet">
+    <title>View</title>
+</head>
+<body>
+    <div class="nav">
+        <div class="nav-left">
+            <a href="/dashboard" class="logo">Wish it</a>
+        </div>
+        <div class="nav-right">
+            <a id="nav_content" href="/#">Support</a>
+            <a id="nav_content" href="/#">About</a>
+            <a class="register" href="/dashboard">Dashboard</a>
+        </div>
+    </div>
+    <div id="container">
+        <h1 id="header">Wish Details</h1>
+        <br><br>
+        <img class="wish_img" src="/static/wish_imgs/{{wish.wish_image}}"alt=""> 
+        <br><br>
+        <h1>{{wish.name}}</h1>
+        <br>
+        <h2>Price: ${{wish.price}}</h2>
+        <br>
+        <h2>{{wish.url}}</h2>
+        <br>
+        <h2>Updated On: {{wish.updated_at}}</h2>
+        <br>
+        <h2>{{wish.description}}</h2>
+    </div>
+</body>
+</html>

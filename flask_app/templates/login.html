@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/login.css') }}" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Sarina&display=swap" rel="stylesheet">
+    <title>Login</title>
+</head>
+<style>
+    h5 {
+        margin: auto;
+    }
+</style>
+<body>
+    <div class="content">
+        <div class="nav">
+            <div class="nav-left">
+                <h1 ><a class="logo1"href="/dashboard">Wish it</a></h1>
+            </div>
+            <div class="nav-right">
+                <a id="nav_content" href="/#">Support</a>
+                <a id="nav_content" href="/#">About</a>
+                <a id="nav_content" href="/login">Sign in</a>
+                <a class="register" href="/register">Get Started</a>
+            </div>
+        </div>
+        <div class="body">
+            <h2 class="logo">Wish it</h2>
+            <h5>Sign in or <a class="signup" href="/register">Create an account</a></h5>
+            {% with errors = get_flashed_messages(category_filter=["login"]) %}
+            {% if errors %}
+            {% for message in errors %}
+            <p style="color:red">{{message}}</p>
+            {% endfor %}
+            {% endif %}
+            {% endwith %}
+            <br>
+            <form action="/user_login" method="POST">
+                <label><b>Email</b></label>
+                <br>
+                <input type="email" name="email">
+                <br><br>
+                <label><b>Password</b></label>
+                <br>
+                <input type="password" name="password">
+                <br>
+                <h5><a href="/reset_password">Forgot Password?</a></h5>
+                <br><br>
+                <input class ="login" type="submit" value="Login">
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>
