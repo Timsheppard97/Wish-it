@@ -27,7 +27,7 @@
                 {% for friend in in_session_user.friends %}
                 <li>
                     {{friend.first_name}} {{friend.last_name}}
-                    <a id="friendsDelete" href="/delete_friend/{{friend.id}}" onclick="return confirm('Are you sure you want to delete this friend?');">Delete</a>
+                    <a id="friendsDelete" href="/delete_friend/{{friend.id}}" onclick="confirm('Are you sure you want to delete this friend?');">Delete</a>
                 </li>
                 {% endfor %}
                 

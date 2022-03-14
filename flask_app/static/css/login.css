@@ -121,3 +121,18 @@ input {
     line-height: 15px;
     width: 200px;
 }
+
+#testBox {
+    height: 200px;
+    width: 350px;
+    border: 2px solid black;
+    position: absolute;
+    left: 150px;
+    top: 200px;
+    padding: 15px;
+}
+
+#testBox p {
+    font-size: 18pt;
+    margin-top: 15px;
+}
